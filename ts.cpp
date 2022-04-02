@@ -1,4 +1,4 @@
-// FORMATER : On Windows Shift + Alt + F.
+// FORMATER : On Windows Shift + Alt + F. 
 #include <iostream>
 #include <vector>
 #include <string>
