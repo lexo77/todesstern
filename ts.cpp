@@ -3,11 +3,13 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+//#include <stdbool.h>
 
 using namespace std;
 #define NDEBUG 
 
-std::vector<int> sectors;
+
+std::vector<bool> sectors;
 
 struct rocket
 {
@@ -78,7 +80,7 @@ void initializeSector(int number)
 int main(int argc, char **argv)
 {
  
-  int testSectorSize=1000000;
+  int testSectorSize=10000;
   initializeSector(testSectorSize);
   CRocket r1(0, 1, testSectorSize/10*3, 1);
   CRocket r2(1, 1, testSectorSize/10*5, 2);
