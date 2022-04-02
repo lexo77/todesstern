@@ -2,9 +2,10 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 using namespace std;
-#define NDEBUG 0
+#define NDEBUG 
 
 std::vector<int> sectors;
 
@@ -52,11 +53,8 @@ public: // Access specifier
 
 int isPanetFulltInfected()
 {
-  for (int n : sectors)
-  {
-    if (n == 0)
-      return 0;
-  }
+  if ( std::find(sectors.begin(), sectors.end(), 0) != sectors.end() )
+    return 0;
   return 1;
 }
 
@@ -80,11 +78,11 @@ void initializeSector(int number)
 int main(int argc, char **argv)
 {
  
-
-  initializeSector(10000);
-  CRocket r1(0, 1, 500, 1);
-  CRocket r2(1, 1, 3000, 2);
-  CRocket r3(4, 1, 6000, 4);
+  int testSectorSize=1000000;
+  initializeSector(testSectorSize);
+  CRocket r1(0, 1, testSectorSize/10*3, 1);
+  CRocket r2(1, 1, testSectorSize/10*5, 2);
+  CRocket r3(4, 1, testSectorSize/10*7, 4);
   // r1.display();
 
   std::vector<CRocket> rockets;
@@ -94,7 +92,7 @@ int main(int argc, char **argv)
 
 // Just display all rockets
 #ifndef NDEBUG
-  for (int y = 0; y < rockets.size(); y++)
+  for (long unsigned int y = 0; y < rockets.size(); y++)
   {
     cout << "rocket " << y << ": ";
     rockets.at(y).display();
