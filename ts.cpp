@@ -101,7 +101,7 @@ int main(int argc, char **argv)
   }
 #endif
 
-  // Max infection time is specified by the min spread time (by 1) and the amount of sectors
+  // Max infection time is specified by the min spread time (1) and the amount of sectors
   for (long unsigned int x = 0; x < sectors.size(); x++)
   {
 
