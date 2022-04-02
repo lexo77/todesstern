@@ -1,0 +1,7 @@
+# .gitignore
+# Erstmal alles ignorieren
+*
+!Makefile
+!ts.cpp
+!.gitignore
+!./vscode

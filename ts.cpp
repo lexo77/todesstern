@@ -102,14 +102,14 @@ int main(int argc, char **argv)
 #endif
 
   // Max infection time is specified by the min spread time by 1 and the amount of sectors
-  for (int x = 0; x < sectors.size(); x++)
+  for (long unsigned int x = 0; x < sectors.size(); x++)
   {
 
 // Iterrate over all rockes and mark the infected sectors
 #ifndef NDEBUG
     cout << "Itteration " << x << "\n";
 #endif
-    for (int y = 0; y < rockets.size(); y++)
+    for (long unsigned int y = 0; y < rockets.size(); y++)
     {
       if (rockets.at(y).m_distance > 0)
       {
@@ -153,7 +153,7 @@ int main(int argc, char **argv)
           for (int z = 0; z < rockets.at(y).m_spreadRate; z++)
           {
             rockets.at(y).m_spreadRight++;
-            if (rockets.at(y).m_spreadRight >= sectors.size())
+            if (rockets.at(y).m_spreadRight >= int(sectors.size()))
               rockets.at(y).m_spreadRight = 0;
             sectors.at(rockets.at(y).m_spreadRight) = 1;
           }
