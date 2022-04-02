@@ -109,6 +109,7 @@ int main(int argc, char **argv)
 #endif
     for (long unsigned int y = 0; y < rockets.size(); y++)
     {
+      //check if rocked reached the planet
       if (rockets.at(y).m_distance > 0)
       {
         rockets.at(y).m_distance = rockets.at(y).m_distance - rockets.at(y).m_speed;
@@ -123,7 +124,7 @@ int main(int argc, char **argv)
 
       if (rockets.at(y).m_distance <= 0)
       {
-        // Ausbreitung nach links
+        //spread to left
         if (rockets.at(y).m_spreadLeft == -1)
         {
           rockets.at(y).m_spreadLeft = rockets.at(y).m_impactPoint;
@@ -140,7 +141,7 @@ int main(int argc, char **argv)
           }
         }
 
-        // Ausbreitung nach rechts
+        //spread to right
         if (rockets.at(y).m_spreadRight == -1)
         {
           rockets.at(y).m_spreadRight = rockets.at(y).m_impactPoint;
